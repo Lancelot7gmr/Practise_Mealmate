@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
+  {% load static %}
+  <link rel="stylesheet" href="index.css">
   <style>
     body, html {
       margin: 0;
@@ -12,18 +14,16 @@
       font-family: Arial, sans-serif;
     }
 
-    /* Background image */
     body {
-      background-image: url('/Django_proj/mealmate/delivery/static/delivery/images/create-food-website.jpg') no-repeat center center fixed;
+      background-image: url('/Users/lancelot7/KodNest/Django_proj/mealmate/delivery/static/Images/create-food-website.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* Center box */
     .center-box {
-      background: rgba(0, 0, 0, 0.6); /* Transparent overlay */
+      background: rgba(0, 0, 0, 0.6);
       padding: 40px;
       border-radius: 10px;
       text-align: center;

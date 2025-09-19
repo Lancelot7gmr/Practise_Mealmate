@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Background image */
+body {
+    background-image: url('/Users/lancelot7/KodNest/Django_proj/mealmate/delivery/static/Images/create-food-website.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center box */
+.center-box {
+    background: rgba(0, 0, 0, 0.6); /* Transparent overlay */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.center-box h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    margin: 10px auto;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-signin {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-signup {
+    background-color: #008CBA;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}

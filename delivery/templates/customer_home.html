@@ -3,10 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Home</title>
+    <title>Customer page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #4CAF50;
+            color: white;
+        }
+
+        thead th {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        tbody td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        tbody tr:hover {
+            background: #e8f5e9;
+            transition: 0.3s;
+        }
+
+        img {
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #4CAF50;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #388E3C;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome Customer</h1>
-    <a href="#">Show restaurants</a>
+<h1>Welcome Customer</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+                <th>Other Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in restaurants %}
+            <tr>
+                <td>
+                    <img src="{{ restaurant.picture }}" alt="Picture of {{ restaurant.name }}" width="100">
+                </td>
+                <td>{{ restaurant.name }}</td>
+                <td>{{ restaurant.cuisine }}</td>
+                <td>{{ restaurant.rating }}/5</td>
+                <td>
+                    <a href="{% url 'view_menu' restaurant.id %}">View Menu</a>
+                    <br>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body>
+    <h1>Customer Home page</h1>
+    <h1>My Favorite Restaurants</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+                <th>Other Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in restaurants %}
+            <tr>
+                <td>
+                    <img src="{{ restaurant.picture }}" alt="Picture of {{ restaurant.name }}" width="100">
+                </td>
+                <td>{{ restaurant.name }}</td>
+                <td>{{ restaurant.cuisine }}</td>
+                <td>{{ restaurant.rating }}/5</td>
+                <td>
+                    <a href="{% url 'view_menu' restaurant.id %}">View Menu </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
 </body>
 </html>
